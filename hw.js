@@ -21,6 +21,7 @@ window.onload = function(){
     var newCounter = document.createElement('div');
     newCounter.innerHTML =  "<h3>Count: <span>0</span></h3>";
     newCounter.innerHTML += "<button> +1 </button>";
+    newCounter.innerHTML += "<button> Delete Counter </button>";
     // Add properties
     newCounter.className += ' counter';
     newCounter.dataset.index = counts.length - 1;
@@ -28,6 +29,13 @@ window.onload = function(){
     newCounter.children[1].onclick = function(){
       var i = Number(this.parentNode.dataset.index);
       incrementCounter(i);
+    };
+    newCounter.children[2].onclick = function(){
+      var i = Number(this.parentNode.dataset.index);
+      // Change underlying data
+      counts.splice(i,1);
+      // Change UI
+      newCounter.parentNode.removeChild(newCounter);
     };
     // Change UI by inserting new counter into page
     document.getElementById('counter-list').appendChild(newCounter);
