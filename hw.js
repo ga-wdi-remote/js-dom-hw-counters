@@ -7,13 +7,31 @@ window.onload = function(){
   /// DO NOT EDIT ABOVE THIS LINE ///
 
   var incrementCounter = function(i){
-    // Your Code Here
+    // Change underlying data
+    counts[i]++;
+    // Change UI
+    var counterDisplay = document.querySelectorAll('.counter span')[i];
+    counterDisplay.innerHTML = counts[i];
   };
 
   var addNewCounter = function(){
-    // Your Code Here
+    // Change underlying data
+    counts.push(0);
+    // Create new element
+    var newCounter = document.createElement('div');
+    newCounter.innerHTML =  "<h3>Count: <span>0</span></h3>";
+    newCounter.innerHTML += "<button> +1 </button>";
+    // Add properties
+    newCounter.className += ' counter';
+    newCounter.dataset.index = counts.length - 1;
+    // Add event handlers
+    newCounter.children[1].onclick = function(){
+      var i = Number(this.parentNode.dataset.index);
+      incrementCounter(i);
+    };
+    // Change UI by inserting new counter into page
+    document.getElementById('counter-list').appendChild(newCounter);
   };
 
-  /// Set Click Handlers Here
-
+  document.getElementById('new-counter').onclick = addNewCounter;
 };
