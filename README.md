@@ -57,17 +57,11 @@ access a sub-property of `dataset` called `.index`.
 > have called this property `data-banana` (and accessed it via
 > `.dataset.banana`).
 
-In order to make all of this work, you will need to complete two functions:
+In order to make all of this work, you will need to complete two named functions:
 `incrementCounter` and `addNewCounter`.
 
--   `incrementCounter` will take one argument, `i`; its job will be
-    (a) to go into the `counts` array and increment the value at index `i`,
-    and
-    (b) to then update the appropriate counter (i.e. the counter with
-    `data-index` equal to `i`) in the HTML page to reflect the new count value.
-    This function will need to be called by the click handler function for the
-    '+1' buttons.
-
+-   `incrementCounter` will take one argument, `i`; its job will be to go into
+    the `counts` array and increment the value at index `i`
 -   `addNewCounter` will be the click handler for the 'New Counter!' button.
     Its job will be
     (a) to add a new count value (starting at 0) to the `counts` array,
@@ -75,8 +69,9 @@ In order to make all of this work, you will need to complete two functions:
     (b) to create a new counter element (corresponding to that new count value)
     inside the `<div>` with the id `counter-list`.
 
-    > Don't forget to add an event handler to the new counter! If you don't,
-    > clicking '+1' won't do anything!
+You'll also need to define an event-handling function for the +1 buttons -- this
+handler should call `incrementCounter`, and then update the count value
+displayed in the DOM.
 
 <!-- ### Testing Your Work
 
@@ -92,7 +87,7 @@ carefully -- it may give you a clue about what to do next. -->
 
 Change the structure of a counter by adding a delete button beneath the '+ 1'
 button. When this button is clicked, it should delete _that specific counter_
-and not interfere with the values of any other counters.
+from the page, and not interfere with the functionality of any other counters.
 
 ## Submitting Your Work
 
