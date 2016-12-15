@@ -79,21 +79,9 @@ controller or traffic cop; when new events occur, `AppController` responds and
 moves relevant data from one place to another within the program. A more
 detailed set of specifications can be found in the `spec` directory.
 
-In order to make all of this work, you will need to complete two named functions:
-`incrementCounter` and `addNewCounter`.
-
--   `incrementCounter` will take one argument, `i`; its job will be to go into
-    the `counts` array and increment the value at index `i`
--   `addNewCounter` will be the click handler for the 'New Counter!' button.
-    Its job will be
-    (a) to add a new count value (starting at 0) to the `counts` array,
-    and
-    (b) to create a new counter element (corresponding to that new count value)
-    inside the `<div>` with the id `counter-list`.
-
-You'll also need to define an event-handling function for the +1 buttons -- this
-handler should call `incrementCounter`, and then update the count value
-displayed in the DOM.
+As you can see by looking inside `hw.js`, `CounterCollection` has already been
+completed; your job tonight is to build `Presenter` and `AppController` in
+accordance with the specs.
 
 <!-- ### Testing Your Work
 
@@ -107,9 +95,18 @@ carefully -- it may give you a clue about what to do next. -->
 
 > NOTE: Do not attempt until **all** requirements are met.
 
-Change the structure of a counter by adding a delete button beneath the '+ 1'
-button. When this button is clicked, it should delete _that specific counter_
-from the page, and not interfere with the functionality of any other counters.
+-   Change the structure of a counter by adding a delete button beneath the
+    '+ 1' button. When this button is clicked, it should delete _that specific_
+    _counter_ from the page, and not interfere with the functionality of any
+    other counters.
+
+    > Look to the setup for the 'increment' buttons as a reference.
+
+-   Add a form field to go with the 'new counter' button, and use it to assign
+    each counter a descriptive title!
+
+    > This will involve making some tweaks to `CounterCollection` as well as the
+    > UI, since you will presumably be storing the title of each counter.
 
 ## Submitting Your Work
 
