@@ -91,9 +91,12 @@ from the page, and not interfere with the functionality of any other counters.
 
 ## Submitting Your Work
 
-When you're ready, push the code to your fork on GitHub and create an issue with
-a title in the format "YourGitHubUsername -- Week XX Day XX".
-The issue body should have:
+When you're ready to submit your work,
+
+1.  Push your code to your fork of the class repo.
+2.  File an issue on the class repo titled "Your Name -- wXXdXX".
+
+The issue should include:
 
 -   A link that points back to your fork.
 
