@@ -42,7 +42,7 @@ the page needs to have the following format:
 ```html
 <div class='counter' data-index='2'>
   <h3>Count: <span>0</span></h3>
-  <button> + 1 </button>
+  <button class='increment'> + 1 </button>
 </div>
 ```
 
@@ -52,12 +52,23 @@ increase by one.
 The `data-index` thing is a _**data attribute**_ -- it's a property of an
 element that we can use to store relevant data. All such properties can be
 accessed by grabbing the element from the DOM and referencing its `dataset`
-property; specifically, to get the value in `data-index`, we would need to
-access a sub-property of `dataset` called `.index`.
+property; specifically, to get the value in `data-counter-id`, we would need to
+access a sub-property of `dataset` called `.counterId`.
 
 > Data attributes can take any name you want to given them, so we could equally
 > have called this property `data-banana` (and accessed it via
 > `.dataset.banana`). But that would be silly, which is why we didn't do it.
+
+This app is comprised of several standalone parts, each with different jobs that
+they focus on. `CounterCollection` is a data model representing the underlying
+data of our counters; in addition to storing the counter data, it is also
+responsible for performing CRUD behaviors on the counters -- it can create new
+counters, destroy existing ones, and either retrieve or update a given counter's
+count value. `Presenter` is responsible for making changes to the DOM --
+creating new HTML, modifying existing HTML code, etc. Finally, `AppController`
+sits on top of the rest of the application, acting like the air traffic
+controller or traffic cop; when new events occur, `AppController` responds and
+moves relevant data from one place to another within the program.
 
 In order to make all of this work, you will need to complete two named functions:
 `incrementCounter` and `addNewCounter`.
