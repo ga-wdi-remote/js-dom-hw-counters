@@ -21,21 +21,24 @@ const CounterCollection = {
     let counter = this.counters.find(function(counter){
       return counter.countId === countId;
     });
-    return counter.count;
+    if (counter) { return counter.count; }
   },
   incrementCounter: function(countId){
     console.log(`increment counter #${countId}`);
     let counter = this.counters.find(function(counter){
       return counter.countId === countId;
     });
-    counter.count += 1;
+    if (counter) {
+      counter.count += 1;
+      return counter.count;
+    }
   },
   destroyCounter: function(countId){
     console.log(`destroy counter #${countId}`);
     let counter = this.counters.find(function(counter){
       return counter.countId === countId;
     });
-    counter.destroy();
+    if (counter) { counter.destroy(); }
     this.counters = this.counters.filter(function(counter){ //
       return counter.countId !== countId
     });
@@ -60,17 +63,17 @@ const Presenter = {
 
 // Top-Level Application Control //
 const AppController = {
-  clickNewCounter: function(event){
+  onClickNewCounter: function(event){
     // Your Code Here
   },
-  clickPlusOne: function(event){
+  onClickIncrement: function(event){
     // Your Code Here
   },
-  clickDelete: function(event){                           // REACH
+  onClickDelete: function(event){                           // REACH
     // Your Code Here
   }
 };
 
 window.onload = function(){
-  document.getElementById('new-counter').onclick = AppController.clickNewCounter;
+  document.getElementById('new-counter').onclick = AppController.onClickNewCounter;
 };
