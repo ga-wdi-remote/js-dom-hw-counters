@@ -17,17 +17,6 @@ Then run `git pull upstream master` to pull the latest materials from the
 instructors' repository. You shouldn't hit a merge conflict here, but if you do,
 flag down an instructor right away.
 
-<!--
-Next, navigate to the directory for today, go into the `homework` directory, and
-run `npm install` -- this will download any assignment-specific JavaScript
-dependencies into to a directory called `node_modules`.
-
-As you work through this assignment, you should make commits regularly.
-In particular, since there are automated tests built into this assignment, we
-recommend that you make a commit every time that you pass a new test, in
-addition to any other time you feel might be appropriate (e.g. just before
-trying out something new). -->
-
 ## Instructions
 
 For this assignment, you will be creating a 'Counter Factory' web app -- this
@@ -82,14 +71,6 @@ detailed set of specifications can be found in the `spec` directory.
 As you can see by looking inside `hw.js`, `CounterCollection` has already been
 completed; your job tonight is to build `Presenter` and `AppController` in
 accordance with the specs.
-
-<!-- ### Testing Your Work
-
-A set of automated tests, written in the [Mocha.js](https://mochajs.org/)
-testing framework, has been provided for you with this assignment.
-To run these tests, navigate to the `homework` directory and type `npm test`
-into the console. Test your work regularly, and read the feedback from the tests
-carefully -- it may give you a clue about what to do next. -->
 
 ### Reach Targets
 
