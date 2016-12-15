@@ -30,12 +30,14 @@ trying out something new). -->
 
 ## Instructions
 
-For this assignment, you will be creating a 'counter' web app -- this tool will
-allow users to create counters and count with them using button clicks.
+For this assignment, you will be creating a 'Counter Factory' web app -- this
+tool will allow users to create counters and count with them using button
+clicks.
 
-Every time that you click the 'New Counter!' button, a new counter element
-should get added to the bottom of the div with the id 'counter-list'. Each
-counter in the page needs to have the following format:
+Every time that you click the 'New Counter!' button, a new counter will be
+created, and a new corresponding UI component for the counter will get added to
+the bottom of the div with the id 'counter-list'. Each counter UI component in
+the page needs to have the following format:
 
 ```html
 <div class='counter' data-index='2'>
@@ -55,7 +57,7 @@ access a sub-property of `dataset` called `.index`.
 
 > Data attributes can take any name you want to given them, so we could equally
 > have called this property `data-banana` (and accessed it via
-> `.dataset.banana`).
+> `.dataset.banana`). But that would be silly, which is why we didn't do it.
 
 In order to make all of this work, you will need to complete two named functions:
 `incrementCounter` and `addNewCounter`.
