@@ -49,6 +49,14 @@ the page needs to have the following format:
 When the `<button>` is clicked, the number inside the `<span>` element should
 increase by one.
 
+  >  Formalizing the description above as a feature spec might produce something like this:
+  >  1. When the 'New Counter!' button is clicked, a new counter appears on the
+  >     page, containing:
+  >     *  a visible count value
+  >     *  a +1 (i.e. 'increment') button
+  >  2. When the 'increment' button for a given counter is clicked, the count value
+  >    shown on the counter increases by 1.
+
 The `data-index` thing is a _**data attribute**_ -- it's a property of an
 element that we can use to store relevant data. All such properties can be
 accessed by grabbing the element from the DOM and referencing its `dataset`
@@ -68,7 +76,8 @@ count value. `Presenter` is responsible for making changes to the DOM --
 creating new HTML, modifying existing HTML code, etc. Finally, `AppController`
 sits on top of the rest of the application, acting like the air traffic
 controller or traffic cop; when new events occur, `AppController` responds and
-moves relevant data from one place to another within the program.
+moves relevant data from one place to another within the program. A more
+detailed set of specifications can be found in the `spec` directory.
 
 In order to make all of this work, you will need to complete two named functions:
 `incrementCounter` and `addNewCounter`.
